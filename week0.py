@@ -13,6 +13,17 @@
 # HINT: using % operator to find remainder may be helpful
 def dose(needs):
     #YOUR SOLUTION STARTS HERE
-
+    if sum(needs)>=500:
+        return "No medicine given"
+    medicine_list = []
+    for attribute in needs:
+        if attribute>=250:
+            return "No medicine given"
+    for attribute in needs:
+        if attribute%10==0:
+            medicine_list.append((attribute//10,0))
+        else:
+            medicine_list.append((attribute//10+1,10-attribute%10))
+    return medicine_list    
     #YOUR SOLUTION ENDS HERE
 
